@@ -1,0 +1,73 @@
+<div class="container h-100 ">
+
+  <div class="row align-items-center h-100">
+    <div class="col-6 mx-auto">
+
+      <div class="ibox">
+        <div class="ibox-head">
+          <div class="ibox-title">Create</div>
+        </div>
+        <div class="ibox-body">
+
+          <form (ngSubmit)="onSubmit()" [formGroup]="signUpForm">
+
+              <div class="form-group">
+                <label for="userName">User Name</label>
+                <input [ngClass]="{ 'is-invalid': submitted && f.userName.errors }" class="form-control"
+                       formControlName="userName" id="userName"
+                       type="text"/>
+                <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+                  <div *ngIf="f.userName.errors.required">User Name is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="phoneNo">Phone no.</label>
+                <input [ngClass]="{ 'is-invalid': submitted && f.phoneNo.errors }" class="form-control"
+                       formControlName="phoneNo" id="phoneNo"
+                       type="text"/>
+                <div *ngIf="submitted && f.phoneNo.errors" class="invalid-feedback">
+                  <div *ngIf="f.phoneNo.errors.required">Valid phone no is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="jobQualification">Job Qualification</label>
+                <input [ngClass]="{ 'is-invalid': submitted && f.jobQualification.errors }" class="form-control"
+                       formControlName="jobQualification" id="jobQualification"
+                       type="text"/>
+                <div *ngIf="submitted && f.jobQualification.errors" class="invalid-feedback">
+                  <div *ngIf="f.jobQualification.errors.required">Job Qualification must more then 6 digits</div>
+                </div>
+              </div>
+
+            <div class="form-group">
+              <label for="orgName">Organization Name</label>
+              <input [ngClass]="{ 'is-invalid': submitted && f.orgName.errors }" class="form-control"
+                     formControlName="orgName" id="orgName"
+                     type="text"/>
+              <div *ngIf="submitted && f.orgName.errors" class="invalid-feedback">
+                <div *ngIf="f.orgName.errors.required">Organization Name is required</div>
+              </div>
+            </div>
+
+              <div *ngIf="submitted && serverError!=''" class="form-group mb-4 row">
+                <label class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9">
+                  <div class="text-danger">{{ serverError }}</div>
+                </div>
+              </div>
+              <div class="form-group text-right">
+                <button class="btn btn-primary">Create Employee</button>
+              </div>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

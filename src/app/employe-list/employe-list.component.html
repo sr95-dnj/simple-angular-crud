@@ -1,0 +1,47 @@
+<div class="col-md-9 ibox">
+  <div class="ibox-head">
+    <div class="ibox-title alert-success text-center">Employee List</div>
+    <div class="input-group col-md-4">
+      <span class="input-group-prepend">
+        <div class="input-group-text bg-transparent border-right-0"><i class="fa fa-search"></i></div>
+      </span>
+      <input type="text" [(ngModel)]="searchText" autocomplete="on" placeholder="Name / Phone No."
+             class="form-control"/>
+    </div>
+  </div>
+  <div class="ibox-body">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Phone No</th>
+        <th scope="col">Job Qualification</th>
+        <th scope="col">org Name</th>
+        <th scope="col">Options</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let employee of getListEmployee">
+        <td style="width: 30%">{{ employee.userName }}</td>
+        <td style="width: 30%">{{ employee.phoneNumber }}</td>
+        <td style="width: 30%">{{ employee.jobQualification }}</td>
+        <td style="width: 30%">{{ employee.orgName }}</td>
+        <td>
+          <a (click)="onEmployeeShowById(employee.id)"><i class="fa fa-eye"></i></a>
+
+          <a (click)="onEmployeeEditById(employee.id)" ><i class="fa fa-edit"></i></a>
+
+          <a (click)="onEmployeeDeleteById(employee.id)" ><i class="fa fa-trash"></i></a>
+
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ibox-footer">
+    <div class="text-center">
+     <!-- <pagination-controls (pageChange)="pageChange($event)" class="my-pagination"></pagination-controls>-->
+    </div>
+
+  </div>
+</div>

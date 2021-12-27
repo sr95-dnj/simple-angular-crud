@@ -1,0 +1,73 @@
+<div class="container h-100 ">
+
+  <div class="row align-items-center h-100">
+    <div class="col-6 mx-auto">
+
+      <div class="ibox">
+        <div class="ibox-head">
+          <div class="ibox-title">Create</div>
+        </div>
+        <div class="ibox-body">
+          <div class="form-group text-right">
+            <button class="btn btn-primary" type="button" (click)="backToHome()">Back to Home</button>
+          </div>
+
+          <form>
+
+            <div class="form-group">
+              <label >Product Name</label>
+              <input class="form-control"
+                     [(ngModel)]="this.model.productName" [ngModelOptions]="{standalone: true}"
+                     type="text"/>
+            </div>
+
+            <div class="form-group">
+              <label>Code</label>
+              <input class="form-control"
+                     [(ngModel)]="this.model.code" [ngModelOptions]="{standalone: true}"
+                     type="text"/>
+            </div>
+
+            <div class="form-group">
+              <label>Quantity</label>
+              <input class="form-control"
+                     [(ngModel)]="this.model.qty" [ngModelOptions]="{standalone: true}"
+                     type="text"/>
+            </div>
+
+            <div class="form-group">
+              <label>Description</label>
+              <input class="form-control"
+                     [(ngModel)]="this.model.description" [ngModelOptions]="{standalone: true}"
+                     type="text"/>
+            </div>
+
+            <div class="form-group">
+              <label>Description</label>
+              <input class="form-control"
+                     [(ngModel)]="this.model.unitPrice" [ngModelOptions]="{standalone: true}"
+                     type="text"/>
+            </div>
+
+            <div class="form-group">
+              <label>Description</label>
+              <input class="form-control"
+                     [(ngModel)]="this.model.unitInStock" [ngModelOptions]="{standalone: true}"
+                     type="text"/>
+            </div>
+
+            <div class="form-group text-right">
+              <button (click)="createProduct()" class="btn btn-primary">Create Product</button>
+            </div>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
